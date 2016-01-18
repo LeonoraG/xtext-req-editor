@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.scasefp7.eu/eclipse/reqeditor/dsl/RqsDsl" 
+       class = "eu.scasefp7.eclipse.reqeditor.dsl.rqsDsl.RqsDslPackage"
+       genModel = "model/generated/RqsDsl.genmodel" /> 
+	
+  </extension>
+
+
+
+</plugin>

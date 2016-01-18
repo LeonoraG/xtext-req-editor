@@ -1,0 +1,32 @@
+grammar eu.scasefp7.eclipse.reqeditor.dsl.RqsDsl with org.eclipse.xtext.common.Terminals
+
+generate rqsDsl "http://www.scasefp7.eu/eclipse/reqeditor/dsl/RqsDsl"
+
+Model:
+	{Model}'REQUIREMENTS'
+	'------------'
+	requirements+=Requirement*
+	'------------'
+	'ANNOTATIONS'
+	'------------'
+	annotations+=(TAnnotation|RAnnotation)*
+	'------------'
+	;
+	
+Requirement:
+	text=(ID|'.')
+;
+
+
+TAnnotation:
+	num=INT ':T' id=INT type=("Actor"|"Action"|"Object"|"Property") a=INT b=INT text += UnquotedString
+;
+
+UnquotedString : 
+	ID +
+;
+
+
+RAnnotation:
+	num=INT ':R' id=INT type=("IsActorOf"|"HasProperty"|"ActsOn"|"Property") aa=INT ':T' ab=INT ba=INT ':T' bb=INT
+;
